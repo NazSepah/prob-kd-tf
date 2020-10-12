@@ -1,0 +1,54 @@
+{
+"train":{
+    "mode": "train",
+    "image_shape":[192, 192, 64, 4],
+    "shuffle": true,
+    "batch_size":4,
+    "base_num_filter":8,
+    "dr_rate":0.3,
+    "lr":2e-4,
+    "adam_beta1":0.90,
+    "weight_decay": true,
+    "nb_latent": 8,
+    "nb_class": 2,
+    "broadcast":true,
+    "add_noise": false,
+    "combined_labels": true,
+    "data_augment": true,
+    "soft_label": false,
+    "label_dist": false,
+    "disc_loss": false,
+    "grl_loss":  false,
+    "kl_loss": false,
+    "activity_loss": false
+  },
+  "valid":{
+    "mode": "valid",
+    "shuffle": false,
+    "batch_size": 4,
+    "nb_class": 2,
+    "combined_labels": true,
+    "data_augment": false,
+    "soft_labels": true
+  },
+
+  "callback":{
+    "mode": "valid",
+    "shuffle": false,
+    "batch_size":1,
+    "nb_class": 2,
+    "combined_labels": true,
+    "data_augment": false
+  },
+  "experiment": {
+    "name":"cnn-count-prob-gauss-multi-112",
+    "mode":"train",
+    "save_np": false,
+    "pre_trained": true,
+    "prob": false,
+    "outdir": "/cim/nazsepah/projects/counts3d-tf/results/miccai",
+    "tfdir": "/cim/nazsepah/data_tf/neurorx",
+    "pre_trained_checkpoint": "cnn-count-prob-gauss-multi-86/checkpoints/model.ckpt-10",
+    "nb_epochs": 1000
+  }
+}

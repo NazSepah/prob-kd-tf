@@ -1,0 +1,52 @@
+{
+  "reader": {
+    "image_dir": ["/cim/data/neurorx/MS-LAQ-302-STX/imaging_data/"],
+    "input_tag": "ISPC-stx152lsq6.mnc.gz",
+    "mask_tag": "patient_ANAT-brain_ISPC-stx152lsq6.mask.mnc.gz",
+    "output_tag": "ISPC-stx152lsq6.mnc.gz",
+    "dataset_name" : "MS-LAQ-302-STX",
+    "cross_validation":false,
+    "break_tfrecords": true,
+    "input_mods": {
+      "t1p": 0,
+      "flr": 1,
+      "t2w": 2,
+      "pdw": 3,
+      "ct2f": 4,
+      "gvf": 5
+    },
+    "output_mods": {
+      "ct2f": 0
+    },
+    "seed": 1380
+  },
+  "writer": {
+    "input_mods": {
+      "t1p": 0,
+      "flr": 1,
+      "t2w": 2,
+      "pdw": 3
+    },
+    "output_mods": {
+      "t1p": 0,
+      "flr": 1,
+      "t2w": 2,
+      "pdw": 3
+    },
+    "dim": [51, 198, 198],
+    "time_points": ["m0", "m12", "m24"],
+    "mode" :"train",
+    "cross_validation":false,
+    "break_tfrecords": true,
+    "debug": true,
+    "outdir": "/cim/nazsepah/data_tf/temp",
+    "bbox": {
+      "min_s": 0,
+      "min_r": 13,
+      "min_c": 13,
+      "max_s": 51,
+      "max_r": 211,
+      "max_c": 172
+    }
+  }
+}

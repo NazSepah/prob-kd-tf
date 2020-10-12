@@ -1,0 +1,51 @@
+{
+"train":{
+    "mode": "train",
+    "image_shape":[192, 192, 64, 4],
+    "shuffle": true,
+    "batch_size":1,
+    "base_num_filter":8,
+    "num_layers": 5,
+    "dr_rate":0.3,
+    "lr":2e-4,
+    "weight_decay": true,
+    "combined_labels": true,
+    "soft_labels": false,
+    "activity_loss": false,
+    "nb_latent": 8,
+    "adam_beta1":0.90,
+    "nb_class": 2
+  },
+  "valid":{
+    "mode": "valid",
+    "shuffle": false,
+    "combined_labels": true,
+    "data_augment": false,
+    "soft_labels": false,
+    "batch_size":1,
+    "nb_class": 2
+  },
+
+  "callback":{
+    "mode": "valid",
+    "shuffle": false,
+    "combined_labels": true,
+    "data_augment": false,
+    "soft_labels": false,
+    "batch_size":1,
+    "nb_class": 2
+  },
+  "experiment": {
+    "name":"cnn-count-prob-gauss-multi-107",
+    "mode":"test",
+    "save_np": false,
+    "epoch": 60,
+    "nb_samples": 10,
+    "outdir": "/cim/nazsepah/projects/counts3d-tf/results/miccai",
+    "tfdir": "/cim/nazsepah/data_tf/neurorx",
+    "nb_epochs": 1000,
+    "tfrecord":true
+  }
+}
+
+
